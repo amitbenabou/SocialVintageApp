@@ -15,6 +15,14 @@ namespace SocialVintageApp.ViewModels
         private SocialVintageWebAPIProxy proxy;
         private IServiceProvider serviceProvider;
 
+        public LoginViewModel(SocialVintageWebAPIProxy proxy, IServiceProvider serviceProvider) 
+        {
+            this.proxy = proxy;
+            this.serviceProvider = serviceProvider;
+            this.LoginCommand = new Command(OnLogin);
+            this.RegisterCommand = new Command(OnRegister);
+        }
+
         private string email;
         private string password;
 
@@ -58,6 +66,20 @@ namespace SocialVintageApp.ViewModels
             }
         }
 
+        private bool rememberMe;
+        public bool RememberMe
+        {
+            get => rememberMe;
+            set
+            {
+                if (rememberMe != value)
+                {
+                    rememberMe = value;
+                    OnPropertyChanged(nameof(RememberMe));
+                }
+            }
+        }
+
 
         public ICommand LoginCommand { get; }
         public ICommand RegisterCommand { get; }
@@ -84,13 +106,15 @@ namespace SocialVintageApp.ViewModels
                 ErrorMsg = "";
                 //Navigate to the main page
                 AppShell shell = serviceProvider.GetService<AppShell>();
-                HomePageViewModel tasksViewModel = serviceProvider.GetService<HomePageViewModel>();
-                //HomePageViewModel.Refresh(); //Refresh data and user in the tasksview model as it is a singleton
-                //((App)Application.Current).MainPage = shell;
-                //Shell.Current.FlyoutIsPresented = false; //close the flyout
-                //Shell.Current.GoToAsync("Tasks"); //Navigate to the Tasks tab page
+                ((App)Application.Current).MainPage = shell;
+                
             }
         }
 
+
+        private async void OnRegister()
+        {
+
+        }
     }
 }

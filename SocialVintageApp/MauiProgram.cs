@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Win32;
+using SocialVintageApp.Services;
+using SocialVintageApp.ViewModels;
+using SocialVintageApp.Views;
 
 namespace SocialVintageApp
 {
@@ -27,18 +30,21 @@ namespace SocialVintageApp
         }
         public static MauiAppBuilder RegisterPages(this MauiAppBuilder builder)
         {
-           
 
+            builder.Services.AddTransient<AppShell>();
+            builder.Services.AddTransient<LoginView>();
             return builder;
         }
 
         public static MauiAppBuilder RegisterDataServices(this MauiAppBuilder builder)
         {
-           
+            builder.Services.AddSingleton<SocialVintageWebAPIProxy>();
             return builder;
         }
         public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder builder)
         {
+            builder.Services.AddTransient<LoginViewModel>();
+            builder.Services.AddTransient<ViewModelBase>();
             return builder;
         }
     }
