@@ -33,6 +33,7 @@ namespace SocialVintageApp
 
             builder.Services.AddTransient<AppShell>();
             builder.Services.AddTransient<LoginView>();
+            
             return builder;
         }
 
