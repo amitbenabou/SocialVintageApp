@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using SocialVintageApp.Services;
 using SocialVintageApp.ViewModels;
 using SocialVintageApp.Views;
+using CommunityToolkit.Maui;
 
 namespace SocialVintageApp
 {
@@ -13,10 +14,15 @@ namespace SocialVintageApp
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Garet-Book.ttf", "GaretBook");
+                    fonts.AddFont("Lostar.ttf", "Lostar");
+                    fonts.AddFont("Narnia.ttf", "Narnia");
+                    fonts.AddFont("Star Vintage - (Demo) hanscostudio.com.ttf", "StarVintage");
                 })
                 .RegisterDataServices()
                 .RegisterPages()
