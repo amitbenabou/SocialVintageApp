@@ -39,7 +39,8 @@ namespace SocialVintageApp
 
             builder.Services.AddTransient<AppShell>();
             builder.Services.AddTransient<LoginView>();
-            
+            builder.Services.AddTransient<RegisterView>();
+
             return builder;
         }
 
@@ -52,6 +53,7 @@ namespace SocialVintageApp
         {
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<ViewModelBase>();
+            builder.Services.AddTransient<RegisterViewModel>();
             return builder;
         }
     }

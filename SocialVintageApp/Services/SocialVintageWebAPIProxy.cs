@@ -30,7 +30,7 @@ namespace SocialVintageApp.Services
         private static string serverIP = "zl7dk8kz-5041.euw.devtunnels.ms";
         private HttpClient client;
         private string baseUrl;
-        public static string BaseAddress = "https://n38j89pc-5041.euw.devtunnels.ms/api/";
+        public static string BaseAddress = "https://zl7dk8kz-5041.euw.devtunnels.ms/api/";
         private static string ImageBaseAddress = "https://zl7dk8kz-5041.euw.devtunnels.ms/";
         #endregion
 

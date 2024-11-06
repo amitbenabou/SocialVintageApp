@@ -30,7 +30,7 @@
 
         <Button 
         Text="L o g i n"
-        Command="{Binding LoginCommand}" IsEnabled="{Binding NotInServerCall}" BackgroundColor="#f9c3c3" Margin="50" FontSize="65" FontFamily="GaretBook" fon />
+        Command="{Binding LoginCommand}" IsEnabled="{Binding NotInServerCall}" BackgroundColor="#f9c3c3" Margin="50" FontSize="30" FontFamily="GaretBook" />
         <Label Text="{Binding ErrorMsg}" TextColor="Red" HorizontalOptions="Center"></Label>
         <Label 
         Text="Don't have an account? Register"
