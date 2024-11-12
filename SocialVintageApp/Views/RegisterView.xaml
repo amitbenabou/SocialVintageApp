@@ -4,9 +4,117 @@
              x:Class="SocialVintageApp.Views.RegisterView"
              Title="RegisterView">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid>
+
+
+            <!-- Main Content -->
+            <VerticalStackLayout IsEnabled="{Binding NotInServerCall}" Padding="20">
+
+                <Label 
+    Text="sign up"
+    TextColor="#6b3304"
+    HorizontalOptions="Center"
+    FontSize="70"
+    FontFamily="Lostar"
+    VerticalOptions="End" />
+
+                <!-- First Name -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="First Name" Grid.Column="0" Style="{StaticResource labelNameStyle}" />
+                    <Label Text="{Binding NameError}" IsVisible="{Binding ShowNameError}" Grid.Column="1" Style="{StaticResource labelErrorStyle}" />
+                </Grid>
+                <Entry Placeholder="Type your Name" Text="{Binding Name}" Style="{StaticResource entryStyle}" />
+
+                <!-- Adress -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Adress" Grid.Column="0" Style="{StaticResource labelAdressStyle}" />
+                    <Label Text="{Binding AdressError}" IsVisible="{Binding ShowAdressError}" Grid.Column="1" Style="{StaticResource labelErrorStyle}" />
+                </Grid>
+                <Entry Placeholder="Type your Adress" Text="{Binding Adress}" Style="{StaticResource entryStyle}" />
+
+                <!-- Email -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Email" Grid.Column="0" Style="{StaticResource labelNameStyle}" />
+                    <Label Text="{Binding EmailError}" IsVisible="{Binding ShowEmailError}" Grid.Column="1" Style="{StaticResource labelErrorStyle}" />
+                </Grid>
+                <Entry Placeholder="Type Email" Text="{Binding Email}" Style="{StaticResource entryStyle}" />
+
+                <!-- Password -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Password" Grid.Column="0" Style="{StaticResource labelNameStyle}" />
+                    <Label Text="{Binding PasswordError}" IsVisible="{Binding ShowPasswordError}" Grid.Column="1" Style="{StaticResource labelErrorStyle}" />
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="40" />
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" Placeholder="Type Password" Text="{Binding Password}" IsPassword="{Binding IsPassword}" Style="{StaticResource entryStyle}" />
+                    <ImageButton Grid.Column="1" HeightRequest="25" Source="passwordeye.jpg" Command="{Binding ShowPasswordCommand}" />
+                </Grid>
+
+                <!-- Photo -->
+                <Label 
+Text="profile picture"
+TextColor="Black"
+HorizontalOptions="Start"
+FontSize="15"
+VerticalOptions="End" />
+                <Frame BorderColor="Black" Padding="5" Margin="50,20,50,10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="theImageBug" Source="{Binding PhotoURL}"  HeightRequest="150"/>
+                        <Label Grid.Row="1"
+Text="Click Here To Upload your profile picture!"
+TextColor="Blue"
+HorizontalOptions="Center"
+VerticalOptions="End">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding UploadPhotoCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </Frame>
+
+                <!-- Register and Cancel Buttons -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Register" Command="{Binding RegisterCommand}" IsEnabled="{Binding NotInServerCall}" Grid.Column="1" Style="{StaticResource buttonStyle}" />
+                    <Button Text="Cancel" Command="{Binding CancelCommand}" IsEnabled="{Binding NotInServerCall}" Grid.Column="0" Style="{StaticResource buttonStyle}"/>
+                </Grid>
+            </VerticalStackLayout>
+            <!-- Centered ActivityIndicator -->
+            <ActivityIndicator IsRunning="{Binding InServerCall}" 
+                   Color="Red" 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" />
+            
+        </Grid>
+        
     </VerticalStackLayout>
 </ContentPage>

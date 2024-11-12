@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SocialVintageApp.Models;
 using SocialVintageApp.Services;
+using SocialVintageApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -114,7 +115,11 @@ namespace SocialVintageApp.ViewModels
 
         private async void OnRegister()
         {
-
+            ErrorMsg = "";
+            Email = "";
+            Password = "";
+            // Navigate to the Register View page
+            ((App)Application.Current).MainPage.Navigation.PushAsync(serviceProvider.GetService<RegisterView>());
         }
     }
 }
