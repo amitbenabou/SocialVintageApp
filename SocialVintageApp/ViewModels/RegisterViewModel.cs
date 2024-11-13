@@ -240,7 +240,7 @@ namespace SocialVintageApp.ViewModels
             get => adress;
             set
             {
-                name = value;
+                adress = value;
                 ValidateAdress();
                 OnPropertyChanged("Adress");
             }
