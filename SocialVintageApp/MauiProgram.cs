@@ -40,6 +40,12 @@ namespace SocialVintageApp
             builder.Services.AddTransient<AppShell>();
             builder.Services.AddTransient<LoginView>();
             builder.Services.AddTransient<RegisterView>();
+            builder.Services.AddTransient<AddItemView>();
+            builder.Services.AddTransient<AddStoreView>();
+            builder.Services.AddTransient<AllStoresView>();
+            builder.Services.AddTransient<HomePageView>();
+            builder.Services.AddTransient<ShoppingBagView>();
+            builder.Services.AddTransient<UserProfileView>();
 
             return builder;
         }
@@ -54,6 +60,13 @@ namespace SocialVintageApp
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<ViewModelBase>();
             builder.Services.AddTransient<RegisterViewModel>();
+            builder.Services.AddTransient<AddItemViewModel>();
+            builder.Services.AddTransient<AddStoreViewModel>();
+            builder.Services.AddTransient<AllStoresViewModel>();
+            builder.Services.AddTransient<HomePageViewModel>();
+            builder.Services.AddTransient<ShoppingBagViewModel>();
+            builder.Services.AddTransient<UserProfileViewModel>();
+            builder.Services.AddTransient<AppShellViewModel>();
             return builder;
         }
     }
