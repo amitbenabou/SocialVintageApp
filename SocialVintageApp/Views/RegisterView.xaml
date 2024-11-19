@@ -24,7 +24,7 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Label Text="First Name" Grid.Column="0" Style="{StaticResource labelNameStyle}" />
+                    <Label Text="User Name" Grid.Column="0" Style="{StaticResource labelNameStyle}" />
                     <Label Text="{Binding NameError}" IsVisible="{Binding ShowNameError}" Grid.Column="1" Style="{StaticResource labelErrorStyle}" />
                 </Grid>
                 <Entry Placeholder="Type your Name" Text="{Binding Name}" Style="{StaticResource entryStyle}" />
