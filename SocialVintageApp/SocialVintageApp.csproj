@@ -61,6 +61,12 @@
 	  <None Remove="Resources\Fonts\Lostar.ttf" />
 	  <None Remove="Resources\Fonts\Narnia.ttf" />
 	  <None Remove="Resources\Fonts\Star Vintage - (Demo) hanscostudio.com.ttf" />
+	  <None Remove="Resources\Images\additem.png" />
+	  <None Remove="Resources\Images\addstore.png" />
+	  <None Remove="Resources\Images\allstores.png" />
+	  <None Remove="Resources\Images\homepage.jpg" />
+	  <None Remove="Resources\Images\profile.jpg" />
+	  <None Remove="Resources\Images\shoppingbag.png" />
 	</ItemGroup>
 
 	<ItemGroup>
