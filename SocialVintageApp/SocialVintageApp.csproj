@@ -67,6 +67,7 @@
 	  <None Remove="Resources\Images\homepage.jpg" />
 	  <None Remove="Resources\Images\profile.jpg" />
 	  <None Remove="Resources\Images\shoppingbag.png" />
+	  <None Remove="Resources\Images\storeprofile.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -96,6 +97,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ShoppingBagView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\StoreProfileView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\UserProfileView.xaml">

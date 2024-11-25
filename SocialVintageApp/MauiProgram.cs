@@ -46,6 +46,7 @@ namespace SocialVintageApp
             builder.Services.AddTransient<HomePageView>();
             builder.Services.AddTransient<ShoppingBagView>();
             builder.Services.AddTransient<UserProfileView>();
+            builder.Services.AddTransient<StoreProfileView>();
 
             return builder;
         }
@@ -67,6 +68,7 @@ namespace SocialVintageApp
             builder.Services.AddTransient<ShoppingBagViewModel>();
             builder.Services.AddTransient<UserProfileViewModel>();
             builder.Services.AddTransient<AppShellViewModel>();
+            builder.Services.AddTransient<StoreProfileViewModel>();
             return builder;
         }
     }
