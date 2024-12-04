@@ -5,45 +5,48 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SocialVintageApp"
     xmlns:views="clr-namespace:SocialVintageApp.Views"
-    Shell.FlyoutBehavior="Disabled"
+    Shell.FlyoutBehavior="Flyout"
     Title="SocialVintageApp">
     
     
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Route="tabs">
         <ShellContent
-            Title="Profile" Icon="profile.jpg"
-            ContentTemplate="{DataTemplate views:UserProfileView}"
-            Route="Profile" />
+Title="add Store" Icon="addstore.png"
+      ContentTemplate="{DataTemplate views:AddStoreView}"
+Route="addStore" />
         <ShellContent
-    Title="addItem" Icon="additem.png" 
+    Title="add Item" Icon="additem.png" 
     ContentTemplate="{DataTemplate views:AddItemView}"
     Route="addItem" />
         <ShellContent
-  Title="addStore" Icon="addstore.png"
-        ContentTemplate="{DataTemplate views:AddStoreView}"
-  Route="addStore" />
-        <ShellContent
-Title="allstores" Icon="allstores.png"
-ContentTemplate="{DataTemplate views:AllStoresView}"
-Route="allstores" />
-        <ShellContent
-Title="homepage" Icon="homepage.jpg" 
+Title="home page" Icon="homepage.jpg" 
 ContentTemplate="{DataTemplate views:HomePageView}"
 Route="homepage" />
         <ShellContent
-Title="shoppingbag" Icon="shoppingbag.png" 
+Title="shopping bag" Icon="shoppingcart.png" 
 ContentTemplate="{DataTemplate views:ShoppingBagView}"
 Route="shoppingbag" />
-        
+        <ShellContent
+Title="all stores" Icon="allstores.png"
+ContentTemplate="{DataTemplate views:AllStoresView}"
+Route="allstores" />
 
 
 
-        <ShellContent IsVisible="{Binding HasStore}"
-Title="storeprofile" Icon="storeprofie.jpg" 
-ContentTemplate="{DataTemplate views:StoreProfileView}"
-Route="storeprofile" />
 
 
     </FlyoutItem>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Route="tabs">
+        <ShellContent
+     Title="Profile" Icon="profile.jpg"
+     ContentTemplate="{DataTemplate views:UserProfileView}"
+     Route="Profile" />
+        <ShellContent IsVisible="{Binding HasStore}"
+Title="store profile" Icon="storeprofie.jpg" 
+ContentTemplate="{DataTemplate views:StoreProfileView}"
+Route="storeprofile" />
+    </FlyoutItem>
+
 
 </Shell>

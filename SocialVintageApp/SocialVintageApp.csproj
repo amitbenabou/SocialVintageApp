@@ -67,6 +67,7 @@
 	  <None Remove="Resources\Images\homepage.jpg" />
 	  <None Remove="Resources\Images\profile.jpg" />
 	  <None Remove="Resources\Images\shoppingbag.png" />
+	  <None Remove="Resources\Images\shoppingcart.png" />
 	  <None Remove="Resources\Images\storeprofile.jpg" />
 	</ItemGroup>
 
