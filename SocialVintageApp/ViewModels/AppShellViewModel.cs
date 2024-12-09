@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SocialVintageApp.ViewModels
 {
-    internal class AppShellViewModel : ViewModelBase
+    public class AppShellViewModel : ViewModelBase
     {
         private User? currentUser;
         private IServiceProvider serviceProvider;
@@ -23,6 +23,14 @@ namespace SocialVintageApp.ViewModels
             get
             {
                 return this.currentUser.HasStore;
+            }
+        }
+
+        public bool DoesNotHaveStore
+        {
+            get
+            {
+                return !this.currentUser.HasStore;
             }
         }
 

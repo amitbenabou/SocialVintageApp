@@ -7,41 +7,44 @@
     xmlns:views="clr-namespace:SocialVintageApp.Views"
     Shell.FlyoutBehavior="Flyout"
     Title="SocialVintageApp">
-    
-    
+
+
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Route="tabs">
-        <ShellContent
-Title="add Store" Icon="addstore.png"
-      ContentTemplate="{DataTemplate views:AddStoreView}"
-Route="addStore" />
-        <ShellContent
-    Title="add Item" Icon="additem.png" 
-    ContentTemplate="{DataTemplate views:AddItemView}"
-    Route="addItem" />
-        <ShellContent
-Title="home page" Icon="homepage.jpg" 
-ContentTemplate="{DataTemplate views:HomePageView}"
-Route="homepage" />
+       
         <ShellContent
 Title="shopping bag" Icon="shoppingcart.png" 
 ContentTemplate="{DataTemplate views:ShoppingBagView}"
 Route="shoppingbag" />
         <ShellContent
+Title="home page" Icon="homepage.jpg" 
+ContentTemplate="{DataTemplate views:HomePageView}"
+Route="homepage" />
+        <ShellContent
 Title="all stores" Icon="allstores.png"
 ContentTemplate="{DataTemplate views:AllStoresView}"
 Route="allstores" />
+        <ShellContent
+Title="Profile" Icon="profile.jpg"
+ContentTemplate="{DataTemplate views:UserProfileView}"
+Route="Profile" />
+    </FlyoutItem>
 
 
 
 
 
+    <FlyoutItem Title="Add Store">
+        <ShellContent IsVisible="{Binding DoesNotHaveStore}"
+Title="add Store" Icon="addstore.png"
+      ContentTemplate="{DataTemplate views:AddStoreView}"
+Route="addStore" />
     </FlyoutItem>
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Route="tabs">
-        <ShellContent
-     Title="Profile" Icon="profile.jpg"
-     ContentTemplate="{DataTemplate views:UserProfileView}"
-     Route="Profile" />
+        <ShellContent IsVisible="{Binding HasStore}"
+Title="add Item" Icon="additem.png" 
+ContentTemplate="{DataTemplate views:AddItemView}"
+Route="addItem" />
         <ShellContent IsVisible="{Binding HasStore}"
 Title="store profile" Icon="storeprofie.jpg" 
 ContentTemplate="{DataTemplate views:StoreProfileView}"
