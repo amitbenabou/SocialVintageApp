@@ -122,6 +122,40 @@ namespace SocialVintageApp.Services
                 return null;
             }
         }
+
+        public async Task<Store?> OpenStore(Store store)
+        {
+            //Set URI to the specific function API
+            string url = $"{this.baseUrl}open store";
+            try
+            {
+                //Call the server API
+                string json = JsonSerializer.Serialize(store);
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PostAsync(url, content);
+                //Check status
+                if (response.IsSuccessStatusCode)
+                {
+                    //Extract the content as string
+                    string resContent = await response.Content.ReadAsStringAsync();
+                    //Desrialize result
+                    JsonSerializerOptions options = new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    };
+                    Store? result = JsonSerializer.Deserialize<Store>(resContent, options);
+                    return result;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public async Task<User?> UploadProfileImage(string imagePath)
         {
             //Set URI to the specific function API
@@ -145,6 +179,42 @@ namespace SocialVintageApp.Services
                         PropertyNameCaseInsensitive = true
                     };
                     User? result = JsonSerializer.Deserialize<User>(resContent, options);
+                    return result;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<Store?> UploadStoreLogo(string imagePath)
+        {
+            //Set URI to the specific function API
+            string url = $"{this.baseUrl}uploadprofileimage";
+            try
+            {
+                //Create the form data
+                MultipartFormDataContent form = new MultipartFormDataContent();
+                var fileContent = new ByteArrayContent(File.ReadAllBytes(imagePath));
+                form.Add(fileContent, "file", imagePath);
+                //Call the server API
+                HttpResponseMessage response = await client.PostAsync(url, form);
+                //Check status
+                if (response.IsSuccessStatusCode)
+                {
+                    //Extract the content as string
+                    string resContent = await response.Content.ReadAsStringAsync();
+                    //Desrialize result
+                    JsonSerializerOptions options = new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    };
+                    Store? result = JsonSerializer.Deserialize<Store>(resContent, options);
                     return result;
                 }
                 else

@@ -40,7 +40,7 @@ Title="add Store" Icon="addstore.png"
 Route="addStore" />
     </FlyoutItem>
 
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Route="tabs">
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Route="tabs" >
         <ShellContent IsVisible="{Binding HasStore}"
 Title="add Item" Icon="additem.png" 
 ContentTemplate="{DataTemplate views:AddItemView}"
