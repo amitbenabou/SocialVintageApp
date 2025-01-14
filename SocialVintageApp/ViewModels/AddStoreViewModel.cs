@@ -252,6 +252,7 @@ namespace SocialVintageApp.ViewModels
                     InServerCall = false;
 
                     ((App)(Application.Current)).MainPage.Navigation.PopAsync();
+                    //await Application.Current.MainPage.DisplayAlert("Opening store", "opening store success", "ok");
                 }
                 else
                 {

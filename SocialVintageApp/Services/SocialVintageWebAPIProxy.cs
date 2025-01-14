@@ -31,7 +31,7 @@ namespace SocialVintageApp.Services
         private HttpClient client;
         private string baseUrl;
         public static string BaseAddress = "https://zl7dk8kz-5041.euw.devtunnels.ms/api/";
-        private static string ImageBaseAddress = "https://zl7dk8kz-5041.euw.devtunnels.ms/";
+        public static string ImageBaseAddress = "https://zl7dk8kz-5041.euw.devtunnels.ms/";
         #endregion
 
         public SocialVintageWebAPIProxy()
@@ -126,7 +126,7 @@ namespace SocialVintageApp.Services
         public async Task<Store?> OpenStore(Store store)
         {
             //Set URI to the specific function API
-            string url = $"{this.baseUrl}open store";
+            string url = $"{this.baseUrl}AddStore";
             try
             {
                 //Call the server API
@@ -195,7 +195,7 @@ namespace SocialVintageApp.Services
         public async Task<Store?> UploadStoreLogo(string imagePath)
         {
             //Set URI to the specific function API
-            string url = $"{this.baseUrl}uploadprofileimage";
+            string url = $"{this.baseUrl}uploadprofileimage?IsStore=true";
             try
             {
                 //Create the form data

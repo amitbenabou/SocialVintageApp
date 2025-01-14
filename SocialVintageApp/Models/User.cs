@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SocialVintageApp.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,15 @@ namespace SocialVintageApp.Models
             public bool HasStore { get; set; }
 
             public string Pswrd { get; set; } = null!;
+            public string ProfileImagePath { get; set; } = "";
+            public string FullProfileImagePath 
+            { 
+                get
+                {
+                 return SocialVintageWebAPIProxy.ImageBaseAddress + ProfileImagePath;
+                }
+            }       
 
-        
+
     }
 }
