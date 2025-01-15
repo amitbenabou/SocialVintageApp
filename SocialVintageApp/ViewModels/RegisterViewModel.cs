@@ -71,19 +71,6 @@ namespace SocialVintageApp.ViewModels
         }
         #endregion
 
-        #region LastName
-        private bool showLastNameError;
-
-        public bool ShowLastNameError
-        {
-            get => showLastNameError;
-            set
-            {
-                showLastNameError = value;
-                OnPropertyChanged("ShowLastNameError");
-            }
-        }
-        #endregion
 
         #region Email
         private bool showEmailError;

@@ -26,6 +26,11 @@ namespace SocialVintageApp.ViewModels
             }
         }
 
+        public void OnStoreAdded()
+        {
+            OnPropertyChanged("HasStore");
+            OnPropertyChanged("DoesNotHaveStore");
+        }
         public bool DoesNotHaveStore
         {
             get

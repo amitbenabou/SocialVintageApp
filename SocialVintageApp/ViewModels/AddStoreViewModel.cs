@@ -238,7 +238,11 @@ namespace SocialVintageApp.ViewModels
                 if (newStore != null)
                 {
                     ((App)Application.Current).LoggedInUser.HasStore = true;
-                    OnPropertyChanged();
+                    
+                    //notify the shell to hide the AddStore menu item
+                    AppShellViewModel appShellVM = (AppShellViewModel)Shell.Current.BindingContext;
+                    appShellVM.OnStoreAdded();
+
                     //UPload profile imae if needed
                     if (!string.IsNullOrEmpty(LocalPhotoPath))
                     {
@@ -251,7 +255,7 @@ namespace SocialVintageApp.ViewModels
                     }
                     InServerCall = false;
 
-                    ((App)(Application.Current)).MainPage.Navigation.PopAsync();
+                    await Shell.Current.GoToAsync("//homepage");
                     //await Application.Current.MainPage.DisplayAlert("Opening store", "opening store success", "ok");
                 }
                 else
